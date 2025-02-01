@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="num" placeholder="Enter a number">
+        <button onclick="checkOddEven()">Check odd/even</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        checkOddEven = () => {
+            let num=document.getElementById("num").value
+            let result=document.getElementById("result")
+
+            if(num==="")
+            result.textContent = "Please enter a number before checking"
+            else {
+                num = parseInt(num);  // Convert input to integer
+                if (isNaN(num)) {
+                    result.textContent = "Please enter a valid number";  // Check if input is a valid number
+                } else if (num % 2 === 0) {
+                    result.innerHTML = "<b>Even</b>";
+                } else {
+                    result.innerHTML = "<b>Odd</b>";
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

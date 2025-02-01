@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Greeting</title>
+</head>
+<body>
+  <h1>Welcome!</h1>
+  <form id="greetingForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName">
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName">
+    <button type="submit">Greet Me</button>
+  </form>
+
+  <p id="greetingMessage"></p>
+
+  <script>
+    document.getElementById("greetingForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form from reloading the page
+
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+
+      const greetingMessage = `Hello, ${firstName} ${lastName}! Welcome to our website.`;
+      document.getElementById("greetingMessage").textContent = greetingMessage;
+    });
+  </script>
+</body>
+</html>
